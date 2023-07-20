@@ -6,6 +6,7 @@ import { RoleModule } from './role/role.module';
 import { GlobalModule } from './global/global.module';
 import { JwtModule } from '@nestjs/jwt';
 import { getConfig } from './utils/env';
+import { PrivilegeModule } from './privilege/privilege.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { getConfig } from './utils/env';
     GlobalModule,
     UserModule,
     RoleModule,
+    PrivilegeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
