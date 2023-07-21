@@ -1,6 +1,8 @@
 # compiled output
-/dist
+/dist/
 /node_modules
+material/**/node_modules/**
+material/**/dist/**
 
 # Logs
 logs
