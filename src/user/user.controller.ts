@@ -10,26 +10,29 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { LoginUserDto } from './dto/login.dto';
-import { ApiOperation } from '@nestjs/swagger';
-import { WhitePath } from '../decorators/whitePath';
+import { LoginUserDto } from "./dto/login.dto";
+import { ApiOperation, ApiTags } from "@nestjs/swagger";
+import { WhitePath } from "../decorators/whitePath";
 import { Profile } from '../decorators/profile';
 import { IUserInfo } from '../types';
 
-@Controller('user')
+@ApiTags("用户模块")
+@Controller("user")
 export class UserController {
   constructor(private readonly userService: UserService) {
     /** */
   }
 
   @WhitePath()
-  @Post('register')
+  @ApiOperation({ summary: "注册" })
+  @Post("register")
   createUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
 
   @WhitePath()
-  @Post('login')
+  @ApiOperation({ summary: "登陆" })
+  @Post("login")
   loginUser(@Body() loginUserDto: LoginUserDto) {
     return this.userService.loginUser(loginUserDto);
   }
@@ -46,7 +49,8 @@ export class UserController {
     return this.userService.update(+id, updateUserDto);
   }
 
-  @Delete(':id')
+  @Delete(":id")
+  @ApiOperation({ summary: "删除用户信息" })
   remove(@Param('id') id: string) {
     return this.userService.remove(+id);
   }

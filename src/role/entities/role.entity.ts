@@ -4,9 +4,11 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  Unique
 } from 'typeorm';
 import { ROLE } from '../constants';
 
+@Unique(["code"])
 @Entity()
 export class Role {
   @PrimaryGeneratedColumn({ comment: '角色id' })

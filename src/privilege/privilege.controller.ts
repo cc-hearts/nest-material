@@ -1,5 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { PrivilegeService } from './privilege.service';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete
+} from "@nestjs/common";
+import { PrivilegeService } from "./privilege.service";
 import { CreatePrivilegeDto } from './dto/create-privilege.dto';
 import { UpdatePrivilegeDto } from './dto/update-privilege.dto';
 
@@ -22,8 +30,11 @@ export class PrivilegeController {
     return this.privilegeService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePrivilegeDto: UpdatePrivilegeDto) {
+  @Patch(":id")
+  update(
+    @Param("id") id: string,
+    @Body() updatePrivilegeDto: UpdatePrivilegeDto
+  ) {
     return this.privilegeService.update(+id, updatePrivilegeDto);
   }
 
