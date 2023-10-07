@@ -14,7 +14,7 @@ import { LoginUserDto, RefreshTokenDto } from './dto/login.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { WhitePath } from '../../../../libs/decorators/whitePath';
 import { Profile } from '../../../../libs/decorators/profile';
-import { IUserInfo } from '../../../../libs/typings/index';
+import type { IUserInfo } from '../../../../libs/typings/index';
 import { GetToken } from '../../../../libs/decorators/token';
 import { BaseResponse } from '../../../../libs/utils/baseResponse';
 

@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { RbacModule } from './rbac.module';
+import { AppModule } from './deploy.module';
 import { ValidationPipe } from '@nestjs/common';
 import { getConfig } from '../../../libs/utils/env';
 import { generatorSwaggerDocument } from '../../../libs/utils/swagger';
@@ -11,11 +11,11 @@ import { join } from 'path';
 
 async function bootstrap() {
   const config = getConfig();
-  const app = await NestFactory.create(RbacModule);
+  const app = await NestFactory.create(AppModule);
 
   const loggerIns = new CustomLogger({
     maxBufferSize: 1024 * 1024 * 2,
-    loggerPath: join(process.cwd(), './logs/rbac'),
+    loggerPath: join(process.cwd(), './logs/deploy'),
   });
   app.useLogger(loggerIns);
   app.useGlobalPipes(new ValidationPipe());
@@ -23,9 +23,9 @@ async function bootstrap() {
   app.useGlobalFilters(new ExceptionFilters());
   generatorSwaggerDocument(app);
 
-  await app.listen(config.port, () => {
+  await app.listen(config.deploy_port, () => {
     loggerIns.startLogger();
-    console.log('service launch success: http://localhost:%d', config.port);
+    console.log('service launch success: http://localhost:%d', config.deploy_port);
   });
 }
 bootstrap();

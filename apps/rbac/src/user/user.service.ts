@@ -10,7 +10,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { USER_PROVIDER, USER_STATUS } from './constants/user.constants';
-import { encodeAes, encodeMd5 } from '../../../../libs/utils/crypto';
+import {decodeAes, encodeAes, encodeMd5} from '../../../../libs/utils/crypto';
 import { LoginUserDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { BaseResponse } from '../../../../libs/utils/baseResponse';
@@ -58,7 +58,8 @@ export class UserService {
     if (data.status === USER_STATUS.DISABLED) {
       throw new HttpException('用户已冻结', HttpStatus.BAD_REQUEST);
     }
-    if (data.password !== encodeMd5(password)) {
+
+    if (data.password !== password) {
       throw new HttpException('密码错误', HttpStatus.BAD_REQUEST);
     }
     return new BaseResponse('登陆成功', await this.genSignaturesToken(data));

@@ -4,7 +4,7 @@
   "sourceRoot": "apps/main/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
+    "webpack": false,
     "tsConfigPath": "apps/main/tsconfig.app.json"
   },
   "monorepo": true,
@@ -26,6 +26,15 @@
       "sourceRoot": "apps/rbac/src",
       "compilerOptions": {
         "tsConfigPath": "apps/rbac/tsconfig.app.json"
+      }
+    },
+    "deploy": {
+      "type": "application",
+      "root": "apps/deploy",
+      "entryFile": "main",
+      "sourceRoot": "apps/deploy/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/deploy/tsconfig.app.json"
       }
     }
   }

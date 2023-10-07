@@ -8,12 +8,10 @@ export const DatabaseProvider = [
   {
     provide: DATA_SOURCE,
     useFactory: async () => {
-      //
       const mysqlConfig = getMysqlConfig() || {};
-
       const databaseConfig = {
         ...mysqlConfig,
-        entities: [resolve(__dirname, '..', './**/*.entity.js')],
+        entities: [resolve(__dirname, '..','..','..', './**/*.entity.js')],
         synchronize: true,
       };
       const databaseSource = new DataSource(databaseConfig);
