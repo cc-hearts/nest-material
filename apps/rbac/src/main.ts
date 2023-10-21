@@ -23,9 +23,9 @@ async function bootstrap() {
   app.useGlobalFilters(new ExceptionFilters());
   generatorSwaggerDocument(app);
 
-  await app.listen(config.port, () => {
+  await app.listen(config.rbac_port, () => {
     loggerIns.startLogger();
-    console.log('service launch success: http://localhost:%d', config.port);
+    console.log('service launch success: http://localhost:%d', config.rbac_port);
   });
 }
 bootstrap();

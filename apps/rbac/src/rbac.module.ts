@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { PrivilegeModule } from './privilege/privilege.module';
 import { RolePrivilegeModule } from './role-privilege/role-privilege.module';
 import { UserRoleModule } from './user-role/user-role.module';
+import { MenuModule } from './menu/menu.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { UserRoleModule } from './user-role/user-role.module';
     PrivilegeModule,
     RolePrivilegeModule,
     UserRoleModule,
+    MenuModule,
   ],
   controllers: [RbacController],
   providers: [RbacService],
