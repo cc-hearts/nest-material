@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { RbacController } from './rbac.controller';
-import { RbacService } from './rbac.service';
+import { RbacController } from './system.controller';
+import { RbacService } from './system.service';
 import { RoleModule } from './role/role.module';
 import { JwtModule } from '@nestjs/jwt';
 import { getConfig } from '../../../libs/utils/env';

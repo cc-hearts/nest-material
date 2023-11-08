@@ -1,3 +1,3 @@
 export default {
-  providerFactoryPath: '../../../../../libs/utils/provider.factory'
-}
+  providerFactoryPath: '../../../../../libs/utils/provider.factory',
+};

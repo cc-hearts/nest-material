@@ -1,8 +1,17 @@
-import {Controller, Get, Post, Body, Patch, Param, Delete, Query} from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Query,
+} from '@nestjs/common';
 import { DeployService } from './deploy.service';
 import { CreateDeployDto } from './dto/create-deploy.dto';
 import { UpdateDeployDto } from './dto/update-deploy.dto';
-import {BasePaginationDto} from "../../../../libs/dto/basePagination.dto";
+import { BasePaginationDto } from '../../../../libs/dto/basePagination.dto';
 
 @Controller('deploy')
 export class DeployController {

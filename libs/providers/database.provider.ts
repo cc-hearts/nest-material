@@ -11,7 +11,7 @@ export const DatabaseProvider = [
       const mysqlConfig = getMysqlConfig() || {};
       const databaseConfig = {
         ...mysqlConfig,
-        entities: [resolve(__dirname, '..','..','..', './**/*.entity.js')],
+        entities: [resolve(__dirname, '..', '..', '..', './**/*.entity.js')],
         synchronize: true,
       };
       const databaseSource = new DataSource(databaseConfig);

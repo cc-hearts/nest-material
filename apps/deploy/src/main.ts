@@ -25,7 +25,10 @@ async function bootstrap() {
 
   await app.listen(config.deploy_port, () => {
     loggerIns.startLogger();
-    console.log('service launch success: http://localhost:%d', config.deploy_port);
+    console.log(
+      'service launch success: http://localhost:%d',
+      config.deploy_port,
+    );
   });
 }
 bootstrap();

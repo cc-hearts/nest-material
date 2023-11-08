@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { RbacModule } from './../src/rbac.module';
+import { RbacModule } from '../src/system.module';
 
 describe('RbacController (e2e)', () => {
   let app: INestApplication;

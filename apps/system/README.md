@@ -1,6 +1,6 @@
-# RBAC Backend
+# System Backend
 
-RBAC Backend is a role-based access control (RBAC) system implemented using Nest.js.
+System Backend is a role-based access control (RBAC) system implemented using Nest.js.
 
 ## Description
 
@@ -12,15 +12,6 @@ This backend application provides a robust RBAC system that allows you to manage
 - Permission management: Define and assign permissions to roles.
 - User management: Manage user accounts and their associated roles.
 - Access control: Enforce role-based access control for different parts of your application.
-
-## Installation
-
-1. Clone the repository:
-   bash
-   git clone <repository_url>
-2. Install dependencies:
-   bash
-   npm install
 
 ## Configuration
 
@@ -46,7 +37,7 @@ secret:
 
 ## Usage
 
-To start the RBAC backend, run the following command:
+To start the System backend, run the following command:
 
 ```shell
 npm run start

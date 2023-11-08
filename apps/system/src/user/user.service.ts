@@ -10,7 +10,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { USER_PROVIDER, USER_STATUS } from './constants/user.constants';
-import {decodeAes, encodeAes, encodeMd5} from '../../../../libs/utils/crypto';
+import { decodeAes, encodeAes, encodeMd5 } from '../../../../libs/utils/crypto';
 import { LoginUserDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { BaseResponse } from '../../../../libs/utils/baseResponse';

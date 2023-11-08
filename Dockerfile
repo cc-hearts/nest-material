@@ -2,7 +2,7 @@ FROM node:latest as base-node
 
 LABEL maintainer="heart<7362469@qq.com>"
 
-WORKDIR /usr/nest-rbac
+WORKDIR /usr/nest-system
 
 COPY . .
 
@@ -18,4 +18,4 @@ RUN cp ./app.production.yaml ./dist/app.production.yaml
 
 EXPOSE 30001
 
-CMD npm run start:prod:rbac
+CMD npm run start:prod:system

@@ -19,13 +19,13 @@
         "tsConfigPath": "apps/main/tsconfig.app.json"
       }
     },
-    "rbac": {
+    "system": {
       "type": "application",
-      "root": "apps/rbac",
+      "root": "apps/system",
       "entryFile": "main",
-      "sourceRoot": "apps/rbac/src",
+      "sourceRoot": "apps/system/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/rbac/tsconfig.app.json"
+        "tsConfigPath": "apps/system/tsconfig.app.json"
       }
     },
     "deploy": {
